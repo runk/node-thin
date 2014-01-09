@@ -1,0 +1,35 @@
+{
+  "name": "thin",
+  "version": "0.0.1",
+  "dependencies": {
+    "request": "~2.0"
+  },
+  "description": "HTTP/HTTPS debuggig proxy",
+  "main": "index.js",
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "mocha -R spec --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:runk/node-thin.git"
+  },
+  "keywords": [
+    "mitm",
+    "interceptor",
+    "debugging",
+    "proxy",
+    "proxy server",
+    "forward proxy"
+  ],
+  "author": "Dmitry Shirokov <deadrunk@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/runk/node-thin/issues"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}
