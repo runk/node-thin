@@ -37,8 +37,3 @@ proxy.listen(8081, 'localhost', function(err) {
 
 ```
 
-
-
-### Limitations
-
-POST and PUT methods aren't working yet.
