@@ -5,6 +5,11 @@ var express = require('express');
 
 function Remote() {
 
+  this.httpsOpts = {
+    key:  fs.readFileSync('./cert/dummy.key', 'utf8'),
+    cert: fs.readFileSync('./cert/dummy.crt', 'utf8')
+  };
+
   this.app = express();
   this.app.use(express.urlencoded());
 
@@ -17,15 +22,19 @@ function Remote() {
       headers:  req.headers
     });
   });
+
+  this.app.all('/not-found', function(req, res) {
+    res.json(404, {status: 404});
+  });
 }
 
 Remote.prototype.listen = function(httpPort, httpsPort, cb) {
-  // https.createServer({
-  //   key: fs.readFileSync('./cert/dummy.key'),
-  //   cert: fs.readFileSync('./cert/dummy.crt')
-  // }, this.app).listen(httpsPort);
-
-  this.app.listen(httpPort, cb);
+  var self = this;
+  this.app.listen(httpPort, function(err) {
+    if (err)
+      return cb(err);
+    https.createServer(self.httpsOpts, self.app).listen(httpsPort, cb);
+  });
 };
 
 
