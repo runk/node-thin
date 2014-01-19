@@ -17,6 +17,9 @@ describe('proxy', function() {
     });
   });
 
+  after(proxy.close.bind(proxy));
+  after(remote.close.bind(remote));
+
   it('should work for HTTP GET methods', function(done) {
     request({
       proxy: 'http://localhost:30002',

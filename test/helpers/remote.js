@@ -30,10 +30,20 @@ function Remote() {
 
 Remote.prototype.listen = function(httpPort, httpsPort, cb) {
   var self = this;
-  this.app.listen(httpPort, function(err) {
+  this.httpServer = this.app.listen(httpPort, function(err) {
     if (err)
       return cb(err);
-    https.createServer(self.httpsOpts, self.app).listen(httpsPort, cb);
+    self.httpsServer = https.createServer(self.httpsOpts, self.app).listen(httpsPort, cb);
+  });
+};
+
+
+Remote.prototype.close = function(cb) {
+  var self = this;
+  self.httpServer.close(function(err) {
+    if (err)
+      return cb(err);
+    self.httpsServer.close(cb);
   });
 };
 
