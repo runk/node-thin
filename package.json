@@ -7,7 +7,8 @@
   "description": "HTTP/HTTPS debuggig proxy",
   "main": "index.js",
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "express": "~3.0"
   },
   "scripts": {
     "test": "mocha -R spec --recursive"
