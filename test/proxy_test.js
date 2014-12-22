@@ -32,9 +32,9 @@ describe('proxy', function() {
         query: {foo: 'bar'},
         body: {},
         headers: {
-          host: 'localhost:30000',
-          accept: 'application/json',
-          connection: 'keep-alive'
+          'host': 'localhost:30000',
+          'accept': 'application/json',
+          'connection': 'keep-alive'
         }
       });
       done()
@@ -55,11 +55,11 @@ describe('proxy', function() {
         query: {foo: 'bar'},
         body: {hello: 'world'},
         headers: {
-          host: 'localhost:30000',
-          'content-type': 'application/x-www-form-urlencoded; charset=utf-8',
-          accept: 'application/json',
+          'host': 'localhost:30000',
+          'content-type': 'application/x-www-form-urlencoded',
+          'accept': 'application/json',
           'content-length': '11',
-          connection: 'keep-alive'
+          'connection': 'keep-alive'
         }
       });
       done()
@@ -78,9 +78,9 @@ describe('proxy', function() {
         query: {foo: 'bar'},
         body: {},
         headers: {
-          host: 'localhost:30001',
-          accept: 'application/json',
-          connection: 'keep-alive'
+          'host': 'localhost:30001',
+          'accept': 'application/json',
+          'connection': 'keep-alive'
         }
       });
       done()
@@ -101,11 +101,11 @@ describe('proxy', function() {
         query: {foo: 'bar'},
         body: {hello: 'world'},
         headers: {
-          host: 'localhost:30001',
-          'content-type': 'application/x-www-form-urlencoded; charset=utf-8',
-          accept: 'application/json',
+          'host': 'localhost:30001',
+          'content-type': 'application/x-www-form-urlencoded',
+          'accept': 'application/json',
           'content-length': '11',
-          connection: 'keep-alive'
+          'connection': 'keep-alive'
         }
       });
       done()
