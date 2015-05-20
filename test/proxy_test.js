@@ -8,7 +8,7 @@ var Thin = require('../lib/thin'),
 describe('proxy', function() {
 
   var remote = new Remote;
-  var proxy = new Thin;
+  var proxy = new Thin({followRedirect: false});
 
   before(function(done) {
     remote.listen(30000, 30001, function(err) {
