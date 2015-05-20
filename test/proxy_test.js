@@ -112,7 +112,6 @@ describe('proxy', function() {
     });
   });
 
-
   it('should work for correctly for 404 responses', function(done) {
     request({
       method: 'GET',
@@ -123,6 +122,19 @@ describe('proxy', function() {
       if (err) return done(err);
       assert.deepEqual(body, {status: 404});
       assert.equal(response.statusCode, 404);
+      done()
+    });
+  });
+
+  it('should not follow HTTP redirects', function(done) {
+    request({
+      method: 'GET',
+      proxy: 'http://localhost:30002',
+      url: 'http://localhost:30000/redirect',
+      followRedirect: false
+    }, function(err, body, response) {
+      if (err) return done(err);
+      assert.equal(response.statusCode, 302);
       done()
     });
   });

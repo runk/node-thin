@@ -23,6 +23,10 @@ function Remote() {
     });
   });
 
+  this.app.all('/redirect', function(req, res) {
+    res.redirect(302, '/not-found#fragment');
+  });
+
   this.app.all('/not-found', function(req, res) {
     res.json(404, {status: 404});
   });
