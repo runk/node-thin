@@ -23,6 +23,10 @@ function Remote() {
     });
   });
 
+  this.app.all('/response_modify', function(req, res) {
+    res.send('CHANGEME');
+  });
+
   this.app.all('/redirect', function(req, res) {
     res.redirect(302, '/not-found#fragment');
   });
