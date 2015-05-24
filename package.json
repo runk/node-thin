@@ -8,7 +8,8 @@
   "main": "index.js",
   "devDependencies": {
     "mocha": "*",
-    "express": "~3.0"
+    "express": "~3.0",
+    "jimp": "^0.2.3"
   },
   "scripts": {
     "test": "mocha -R spec --recursive"
