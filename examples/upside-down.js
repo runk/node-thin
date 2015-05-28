@@ -11,7 +11,8 @@ var Jimp = require('jimp');
 
 var proxy = new Thin({
     followRedirect: false,
-    strictSSL: false
+    strictSSL: false,
+    SNICallback: helpers.makeSNICallback()
 });
 
 /*
