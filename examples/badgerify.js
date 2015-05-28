@@ -10,7 +10,8 @@ var http = require('http');
 
 var proxy = new Thin({
     followRedirect: false,
-    strictSSL: true
+    strictSSL: true,
+    SNICallback: helpers.makeSNICallback()
 });
 
 /*

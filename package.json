@@ -9,7 +9,9 @@
   "devDependencies": {
     "mocha": "*",
     "express": "~3.0",
-    "jimp": "^0.2.3"
+    "jimp": "^0.2.3",
+    "bluebird": "^2.9.26",
+    "pem": "^1.7.2"
   },
   "scripts": {
     "test": "mocha -R spec --recursive"
