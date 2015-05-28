@@ -1,6 +1,6 @@
 {
   "name": "thin",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "dependencies": {
     "request": ">=2.51.0"
   },
