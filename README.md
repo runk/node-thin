@@ -83,11 +83,15 @@ https.createServer({
 
 If you try to make a query to your server you should be able to see a log from `thin`:
 
-  curl -d "foo=baz" -k -x https://localhost:8081 https://localhost:3001/test?foo=bar
-  curl -d "foo=baz" -x http://localhost:8081 http://localhost:3000/test?foo=bar
+```shell
+curl -d "foo=baz" -k -x https://localhost:8081 https://localhost:3001/test?foo=bar
+curl -d "foo=baz" -x http://localhost:8081 http://localhost:3000/test?foo=bar
+```
 
 You can intercept particular route:
 
-  curl -d "foo=baz" -k -x https://localhost:8081 https://localhost:3001/foobar
+```shell
+curl -d "foo=baz" -k -x https://localhost:8081 https://localhost:3001/foobar
+```
 
 Response should be `intercepted` instead of `original`.
